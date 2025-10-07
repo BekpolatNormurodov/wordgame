@@ -11,14 +11,14 @@ export 'package:image_picker/image_picker.dart';
 export 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 // Screen
-export 'package:wordgame/Screen/logo_page.dart';
+export 'package:wordgame/Screen/home/logo_page.dart';
 export 'package:wordgame/Screen/Account/account_create.dart';
-export 'package:wordgame/Screen/home_page.dart';
+export 'package:wordgame/Screen/home/home_page.dart';
 export 'package:wordgame/Screen/Account/account_page.dart';
-export 'package:wordgame/Screen/category_page.dart';
+export 'package:wordgame/Screen/home/category_page.dart';
 export 'package:wordgame/Screen/Ranking/league_ranking.dart';
-export 'package:wordgame/Games/hangman_steps_page.dart';
-export 'package:wordgame/Games/hangman_game_page.dart';
+export 'package:wordgame/Screen/steps/steps_page.dart';
+export 'package:wordgame/Games/hangman_page.dart';
 
 
 

@@ -1,13 +1,13 @@
 import '../library.dart';
 
-class HangmanGamePage extends StatefulWidget {
-  const HangmanGamePage({super.key});
+class GamePage extends StatefulWidget {
+  const GamePage({super.key});
 
   @override
-  State<HangmanGamePage> createState() => _HangmanGamePageState();
+  State<GamePage> createState() => _GamePageState();
 }
 
-class _HangmanGamePageState extends State<HangmanGamePage> {
+class _GamePageState extends State<GamePage> {
   final String characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   final List<String> selectedChar = [];
   int tries = 0;
