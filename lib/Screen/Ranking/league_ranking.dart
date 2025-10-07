@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LeagueRanking extends StatefulWidget {
+  LeagueRanking({super.key});
+
   @override
   State<LeagueRanking> createState() => _LeagueRankingState();
 }

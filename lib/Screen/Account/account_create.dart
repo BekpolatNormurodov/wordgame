@@ -80,7 +80,7 @@ class _AccountCreateState extends State<AccountCreate>
                                   height: 130,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Colors.black.withOpacity(.1),
+                                    color: Color.fromRGBO(0, 0, 0, 0.1),
                                   ),
                                   child: Icon(
                                     Icons.add_a_photo,
@@ -105,7 +105,7 @@ class _AccountCreateState extends State<AccountCreate>
                       height: 42,
                       onChanged: (b) => setState(() => positive = b),
                       styleBuilder: (b) => ToggleStyle(
-                        backgroundColor: Colors.black.withOpacity(.1),
+                        backgroundColor: Color.fromRGBO(0, 0, 0, 0.1),
                         indicatorColor:
                             b ? Colors.black87 : Colors.cyan.shade800,
                       ),
@@ -163,12 +163,12 @@ class _AccountCreateState extends State<AccountCreate>
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide:
-                          BorderSide(color: Colors.black.withOpacity(.15)),
+                          BorderSide(color: Color.fromRGBO(0, 0, 0, 0.15)),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                       borderSide:
-                          BorderSide(color: Colors.black.withOpacity(.15)),
+                          BorderSide(color: Color.fromRGBO(0, 0, 0, 0.15)),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -192,9 +192,9 @@ class _AccountCreateState extends State<AccountCreate>
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 13),
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(.1),
+                          color: Color.fromRGBO(0, 0, 0, 0.1),
                           border:
-                              Border.all(color: Colors.black.withOpacity(0.03)),
+                              Border.all(color: Color.fromRGBO(0, 0, 0, 0.03)),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -241,18 +241,15 @@ class _AccountCreateState extends State<AccountCreate>
                             padding: EdgeInsets.all(1),
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: Colors.black.withOpacity(0.1)),
+                                  color: Color.fromRGBO(0, 0, 0, 0.1)),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Column(
                               children: languages.asMap().entries.map((entry) {
-                                final index = entry.key;
                                 final lang = entry.value;
 
                                 // Navbatdagi fon rang
-                                final backgroundColor = index.isEven
-                                    ? Colors.black.withOpacity(.1)
-                                    : Colors.black.withOpacity(.1);
+                                final backgroundColor = Color.fromRGBO(0, 0, 0, 0.1);
 
                                 return Container(
                                   margin: EdgeInsets.symmetric(

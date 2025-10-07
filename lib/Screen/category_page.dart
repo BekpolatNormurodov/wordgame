@@ -2,7 +2,7 @@ import 'package:wordgame/library.dart';
 
 class CategoryPage extends StatefulWidget {
   int index;
-  CategoryPage(this.index);
+  CategoryPage(this.index, {super.key});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -16,7 +16,7 @@ class _CategoryPageState extends State<CategoryPage> {
     {'icon': "wordfind", 'label': "So'zlarni topish"},
   ];
 
-  List pages = [StepsPage(), HangmanPage(), HangmanPage(), HangmanPage()];
+  List pages = [HangmanStepsPage(), HangmanGamePage(), HangmanGamePage(), HangmanGamePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -128,12 +128,12 @@ class _AnimatedCategoryButtonState extends State<_AnimatedCategoryButton>
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Color.fromRGBO(0, 0, 0, 0.08),
                 blurRadius: 4,
                 offset: Offset(2, 2),
               ),
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Color.fromRGBO(0, 0, 0, 0.08),
                 blurRadius: 4,
                 offset: Offset(-1, -1),
               )

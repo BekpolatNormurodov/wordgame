@@ -1,13 +1,13 @@
 import 'package:wordgame/library.dart';
 
-class StepsPage extends StatefulWidget {
-  const StepsPage({super.key});
+class HangmanStepsPage extends StatefulWidget {
+  const HangmanStepsPage({super.key});
 
   @override
-  State<StepsPage> createState() => _StepsPageState();
+  State<HangmanStepsPage> createState() => _HangmanStepsPageState();
 }
 
-class _StepsPageState extends State<StepsPage> {
+class _HangmanStepsPageState extends State<HangmanStepsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class _StepsPageState extends State<StepsPage> {
         itemCount: 100,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => Get.to(HangmanPage()),
+            onTap: () => Get.to(HangmanGamePage()),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               alignment: Alignment.center,

@@ -23,7 +23,7 @@ class _LogoPageState extends State<LogoPage> with TickerProviderStateMixin {
     });
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushAndRemoveUntil(
-          context, AnimationRouter(AccountCreate(), 3000), (route) => false);
+          context, AnimationRouter( AccountCreate(), 3000), (route) => false);
     });
     super.initState();
   }

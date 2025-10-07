@@ -1,13 +1,13 @@
 import '../library.dart';
 
-class HangmanPage extends StatefulWidget {
-  const HangmanPage({super.key});
+class HangmanGamePage extends StatefulWidget {
+  const HangmanGamePage({super.key});
 
   @override
-  State<HangmanPage> createState() => _HangmanPageState();
+  State<HangmanGamePage> createState() => _HangmanGamePageState();
 }
 
-class _HangmanPageState extends State<HangmanPage> {
+class _HangmanGamePageState extends State<HangmanGamePage> {
   final String characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   final List<String> selectedChar = [];
   int tries = 0;
@@ -302,13 +302,12 @@ class _HangmanPageState extends State<HangmanPage> {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (_) => WillPopScope(
-        onWillPop: () async => false,
+      builder: (_) => PopScope(
         child: AlertDialog(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: Column(
-            children: const [
+          title: const Column(
+            children:  [
               Icon(Icons.sentiment_dissatisfied, size: 48, color: Colors.red),
               SizedBox(height: 8),
               Text(
@@ -322,9 +321,9 @@ class _HangmanPageState extends State<HangmanPage> {
             children: [
               Text("To'g'ri topilgan javoblar: $categoryIndex"),
               const SizedBox(height: 8),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(Icons.star, color: Colors.amber),
                   SizedBox(width: 4),
                   Text("Ball: "),
@@ -427,4 +426,15 @@ Widget figure(String path, bool visible) {
       child: Image.asset(path),
     ),
   );
+}
+
+
+class GameUI {
+  static const img0 = "assets/images/hangman/0.png";
+  static const img1 = "assets/images/hangman/1.png";
+  static const img2 = "assets/images/hangman/2.png";
+  static const img3 = "assets/images/hangman/3.png";
+  static const img4 = "assets/images/hangman/4.png";
+  static const img5 = "assets/images/hangman/5.png";
+  static const img6 = "assets/images/hangman/6.png";
 }

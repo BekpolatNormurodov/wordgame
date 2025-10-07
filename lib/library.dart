@@ -11,20 +11,20 @@ export 'package:image_picker/image_picker.dart';
 export 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 // Screen
-export 'package:wordgame/logo_page.dart';
+export 'package:wordgame/Screen/logo_page.dart';
 export 'package:wordgame/Screen/Account/account_create.dart';
 export 'package:wordgame/Screen/home_page.dart';
 export 'package:wordgame/Screen/Account/account_page.dart';
 export 'package:wordgame/Screen/category_page.dart';
 export 'package:wordgame/Screen/Ranking/league_ranking.dart';
-export 'Screen/game_page.dart';
-export 'constants.dart';
-export 'package:wordgame/Screen/Steps/steps_page.dart';
+export 'package:wordgame/Games/hangman_steps_page.dart';
+export 'package:wordgame/Games/hangman_game_page.dart';
+
 
 
 // Repository
 export 'dart:convert';
 export 'package:flutter/services.dart';
-export 'Repository/word_model.dart';
-export 'Repository/word_service.dart';
-export 'Repository/word_provider.dart';
+export 'Repository/hangman/word_model.dart';
+export 'Repository/hangman/word_service.dart';
+export 'Repository/hangman/word_provider.dart';

@@ -112,12 +112,12 @@ class _AccountPageState extends State<AccountPage>
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                                color: Colors.black.withOpacity(.15)),
+                                color: Color.fromRGBO(0, 0, 0, 0.15)),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                             borderSide: BorderSide(
-                                color: Colors.black.withOpacity(.15)),
+                                color: Color.fromRGBO(0, 0, 0, 0.15)),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -134,9 +134,9 @@ class _AccountPageState extends State<AccountPage>
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(.1),
+                color: Color.fromRGBO(0, 0, 0, 0.15),
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black.withOpacity(0.03)),
+                border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.03)),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,8 +185,8 @@ class _AccountPageState extends State<AccountPage>
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 13),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(.1),
-                      border: Border.all(color: Colors.black.withOpacity(0.03)),
+                      color: Color.fromRGBO(0, 0, 0, 0.1),
+                      border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.03)),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
@@ -233,18 +233,15 @@ class _AccountPageState extends State<AccountPage>
                         padding: EdgeInsets.all(1),
                         decoration: BoxDecoration(
                           border:
-                              Border.all(color: Colors.black.withOpacity(0.1)),
+                              Border.all(color: Color.fromRGBO(0, 0, 0, 0.1)),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
                           children: languages.asMap().entries.map((entry) {
-                            final index = entry.key;
                             final lang = entry.value;
 
                             // Navbatdagi fon rang
-                            final backgroundColor = index.isEven
-                                ? Colors.black.withOpacity(.1)
-                                : Colors.black.withOpacity(.1);
+                            final backgroundColor = Color.fromRGBO(0, 0, 0, 0.1);
 
                             return Container(
                               margin: EdgeInsets.symmetric(vertical: 1, horizontal: 2),
@@ -254,7 +251,7 @@ class _AccountPageState extends State<AccountPage>
                               ),
                               child: ListTile(
                                 contentPadding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
+                                     EdgeInsets.symmetric(horizontal: 20),
                                 title: Text(
                                   lang.toUpperCase(),
                                   style: const TextStyle(

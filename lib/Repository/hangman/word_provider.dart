@@ -1,4 +1,4 @@
-import '../library.dart';
+import '../../library.dart';
 
 enum WordState { intial, waiting, success, error }
 
