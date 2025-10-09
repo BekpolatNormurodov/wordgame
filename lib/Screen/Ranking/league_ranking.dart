@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:wordgame/library.dart';
 
 class LeagueRanking extends StatefulWidget {
   LeagueRanking({super.key});
@@ -26,11 +26,7 @@ class _LeagueRankingState extends State<LeagueRanking> {
       "score": 1670,
       "avatar": "https://i.pravatar.cc/150?img=2",
     },
-    {
-      "name": "Siz",
-      "score": 1450,
-      "avatar": "https://i.pravatar.cc/150?img=3",
-    },
+    {"name": "Siz", "score": 1450, "avatar": "https://i.pravatar.cc/150?img=3"},
     {
       "name": "Aziza",
       "score": 1300,
@@ -162,16 +158,17 @@ class _LeagueRankingState extends State<LeagueRanking> {
         backgroundColor: Colors.cyan.shade100,
         appBar: AppBar(
           backgroundColor: Colors.cyan.shade800,
-          title: const Text(
+          leading: GestureDetector(onTap: ()=>Get.back(), child: Icon(Icons.arrow_back, color: Colors.white),),
+          title: Text(
             "🏆 Reyting",
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 22.sp,
               fontWeight: FontWeight.bold,
               letterSpacing: .8,
               color: Colors.white,
               shadows: [
                 Shadow(
-                  blurRadius: 4.0,
+                  blurRadius: 4.0.r,
                   color: Colors.black54,
                   offset: Offset(2, 2),
                 ),
@@ -180,48 +177,7 @@ class _LeagueRankingState extends State<LeagueRanking> {
           ),
           centerTitle: true,
         ),
-        body: Column(
-          children: [
-            ClipRRect(
-              child: Container(
-                height: 48,
-                margin: EdgeInsets.only(top: 20),
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  color: Colors.cyan.shade200,
-                ),
-                child: TabBar(
-                  labelPadding: EdgeInsets.zero,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  dividerColor: Colors.transparent,
-                  indicator: BoxDecoration(
-                    color: Colors.cyan.shade800,
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                  labelStyle: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                  unselectedLabelStyle: TextStyle(color: Colors.cyan.shade900, fontSize: 15, fontWeight: FontWeight.w600),
-                  tabs: [
-                    TabItem(title: 'Tasodify'),
-                    TabItem(title: 'Ingliz tili'),
-                    TabItem(title: 'Krassvord'),
-                    TabItem(title: 'Diniy'),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              child: TabBarView(
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                  league(),
-                  league(),
-                  league(),
-                  league(),
-                ],
-              ),
-            )
-          ],
-        ),
+        body: league(),
       ),
     );
   }
@@ -233,71 +189,69 @@ class _LeagueRankingState extends State<LeagueRanking> {
         boxShadow: [
           BoxShadow(
             color: Colors.cyan.shade100,
-            blurRadius: 5,
+            blurRadius: 5.r,
             offset: Offset(0, 2),
           ),
         ],
       ),
-      padding: const EdgeInsets.all(12),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: players.length, 
-
-
-
-                    
+              itemCount: players.length,
               itemBuilder: (context, index) {
                 final player = players[index];
                 final isYou = player["name"] == "Siz";
 
                 return Container(
-                  margin: const EdgeInsets.symmetric(vertical: 4),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  margin: EdgeInsets.symmetric(vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: isYou ? Colors.cyan.shade200 : Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.cyan.shade200),
+                    borderRadius: BorderRadius.circular(10.r),
+                    border: Border.all(
+                      color: isYou
+                          ? Colors.cyan.shade300
+                          : Colors.cyan.shade200,
+                    ),
                   ),
                   child: Row(
                     children: [
                       Text(
                         "${index + 1}",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
-                          color: isYou
-                              ? Colors.cyan.shade900
-                              : Colors.cyan.shade800,
+                          color: isYou ? Colors.black : Colors.cyan.shade800,
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 14.w),
                       CircleAvatar(
-                        radius: 18,
+                        radius: 18.r,
                         backgroundImage: NetworkImage(player['avatar']),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12.w),
                       Expanded(
                         child: Text(
                           player["name"],
                           style: TextStyle(
-                            fontWeight:
-                                isYou ? FontWeight.bold : FontWeight.w500,
-                            color:
-                                isYou ? Colors.cyan.shade900 : Colors.black87,
+                            fontWeight: isYou
+                                ? FontWeight.w800
+                                : FontWeight.w500,
+                            color: isYou ? Colors.black : Colors.black87,
                           ),
                         ),
                       ),
                       Text(
                         "${player["score"]} ball",
                         style: TextStyle(
-                          fontSize: 14,
-                          color: isYou
-                              ? Colors.cyan.shade900
-                              : Colors.grey.shade800,
+                          fontSize: 14.sp,
+                          color: isYou ? Colors.black : Colors.grey.shade800,
                           fontWeight: isYou ? FontWeight.bold : FontWeight.w500,
                         ),
                       ),
@@ -316,18 +270,10 @@ class _LeagueRankingState extends State<LeagueRanking> {
 class TabItem extends StatelessWidget {
   final String title;
 
-  const TabItem({
-    super.key,
-    required this.title,
-  });
+  TabItem({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    return Tab(
-      child: Text(
-        title,
-        overflow: TextOverflow.ellipsis,
-      ),
-    );
+    return Tab(child: Text(title, overflow: TextOverflow.ellipsis));
   }
 }

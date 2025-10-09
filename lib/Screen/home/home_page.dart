@@ -1,14 +1,14 @@
 import 'package:wordgame/library.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        toolbarHeight: 60,
+        toolbarHeight: 60.h,
         backgroundColor: Colors.cyan.shade800,
         elevation: 0,
         centerTitle: true,
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         title: Text(
           "SO'Z O'YINLARI",
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 22.sp,
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
             wordSpacing: 1,
@@ -34,24 +34,23 @@ class HomePage extends StatelessWidget {
           InkWell(
             onTap: () => Get.to(AccountPage()),
             child: Padding(
-              padding: const EdgeInsets.only(right: 6),
+              padding: EdgeInsets.only(right: 6.w),
               child: CircleAvatar(
-                radius: 26,
+                radius: 26.r,
                 backgroundColor: Colors.transparent,
                 child: Image(image: AssetImage("assets/icons/account.png")),
               ),
             ),
-          )
+          ),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(bottom: 80, left: 20, right: 20),
+        padding: EdgeInsets.only(bottom: 120.h, left: 14.w, right: 14.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             buildButton("O'yinlar", "games", 0),
             buildButton("Online  Battle", "battle", 1),
-            SizedBox(height: 40),
           ],
         ),
       ),
@@ -59,7 +58,7 @@ class HomePage extends StatelessWidget {
         onPressed: () => Get.to(LeagueRanking()),
         backgroundColor: Colors.cyan.shade800,
         child: Padding(
-          padding: const EdgeInsets.all(6.0),
+          padding: EdgeInsets.all(6.0.w),
           child: Image(image: AssetImage("assets/icons/ranking.png")),
         ),
       ),
@@ -70,15 +69,15 @@ class HomePage extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
+        padding: EdgeInsets.symmetric(vertical: 4.h),
         child: GestureDetector(
           onTap: () => Get.to(CategoryPage(index)),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 60,
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            height: 48.h,
             decoration: BoxDecoration(
               color: Colors.cyan.shade800,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,16 +88,16 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       text.toUpperCase(),
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
                         shadows: [
                           BoxShadow(
                             offset: Offset(1.2, 1),
                             color: Colors.black,
-                            blurRadius: 2,
+                            blurRadius: 2.r,
                           ),
-                        ]
+                        ],
                       ),
                     ),
                   ),

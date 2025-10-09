@@ -2,7 +2,7 @@ import 'package:wordgame/library.dart';
 import 'dart:io';
 
 class AccountCreate extends StatefulWidget {
-  const AccountCreate({super.key});
+  AccountCreate({super.key});
 
   @override
   State<AccountCreate> createState() => _AccountCreateState();
@@ -45,7 +45,7 @@ class _AccountCreateState extends State<AccountCreate>
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 4),
+            padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 16.h, bottom: 4.h),
             child: Column(
               children: [
                 // Avatar
@@ -53,18 +53,18 @@ class _AccountCreateState extends State<AccountCreate>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(width: 60),
+                    SizedBox(width: 60.w),
                     SizedBox(
-                      height: 140,
+                      height: 120.h,
                       child: GestureDetector(
                         onTap: pickImage,
                         child: Container(
-                          width: 130,
-                          height: 130,
+                          width: 130.w,
+                          height: 130.w,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                                color: Colors.cyan.shade700, width: 2),
+                                color: Colors.cyan.shade700, width: 2.w),
                             image: DecorationImage(
                               image: profileImage != null
                                   ? FileImage(profileImage!)
@@ -76,8 +76,8 @@ class _AccountCreateState extends State<AccountCreate>
                           alignment: Alignment.center,
                           child: profileImage == null
                               ? Container(
-                                  width: 130,
-                                  height: 130,
+                                  width: 130.w,
+                                  height: 130.w,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Color.fromRGBO(0, 0, 0, 0.1),
@@ -85,7 +85,7 @@ class _AccountCreateState extends State<AccountCreate>
                                   child: Icon(
                                     Icons.add_a_photo,
                                     color: Colors.cyan.shade900,
-                                    size: 40,
+                                    size: 40.sp,
                                   ),
                                 )
                               : null,
@@ -97,52 +97,52 @@ class _AccountCreateState extends State<AccountCreate>
                       current: positive,
                       first: false,
                       second: true,
-                      spacing: 4.0,
+                      spacing: 4.0.w,
                       style: ToggleStyle(
                         borderColor: Colors.black,
                       ),
-                      borderWidth: .1,
-                      height: 42,
+                      borderWidth: .1.w,
+                      height: 36.h,
                       onChanged: (b) => setState(() => positive = b),
                       styleBuilder: (b) => ToggleStyle(
                         backgroundColor: Color.fromRGBO(0, 0, 0, 0.1),
                         indicatorColor:
                             b ? Colors.black87 : Colors.cyan.shade800,
                       ),
-                      indicatorSize: Size.fromWidth(42.0),
+                      indicatorSize: Size.fromWidth(42.0.w),
                       iconBuilder: (value) => value
-                          ? const Icon(Icons.nightlight, size: 20)
-                          : const Icon(Icons.sunny, size: 20),
+                          ? Icon(Icons.nightlight, size: 20.sp)
+                          : Icon(Icons.sunny, size: 20.sp),
                       textBuilder: (value) => value
-                          ? const Center(
+                          ? Center(
                               child: Text(
                               'Tun',
                               style: TextStyle(
                                 color: Colors.black87,
-                                fontSize: 16,
+                                fontSize: 16.sp,
                               ),
                             ))
-                          : const Center(
+                          : Center(
                               child: Text(
                               'Kun',
                               style: TextStyle(
                                 color: Colors.black87,
-                                fontSize: 16,
+                                fontSize: 16.sp,
                               ),
                             )),
                     ),
                   ],
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: 10.h),
                 Row(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(bottom: 2),
+                      margin: EdgeInsets.only(bottom: 2.h),
                       child: Text(
                         " Ismingiz:",
                         style: TextStyle(
                           color: Colors.black54,
-                          fontSize: 15,
+                          fontSize: 15.sp,
                         ),
                       ),
                     ),
@@ -152,7 +152,7 @@ class _AccountCreateState extends State<AccountCreate>
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                   ),
                   cursorColor: Colors.cyan.shade800,
                   cursorWidth: 1.6,
@@ -161,22 +161,22 @@ class _AccountCreateState extends State<AccountCreate>
                     filled: true,
                     fillColor: Colors.transparent,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                       borderSide:
                           BorderSide(color: Color.fromRGBO(0, 0, 0, 0.15)),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                       borderSide:
                           BorderSide(color: Color.fromRGBO(0, 0, 0, 0.15)),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.r),
                       borderSide: BorderSide(color: Colors.cyan.shade800),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 16.h),
 
                 // 🌐 Til tanlash
                 Column(
@@ -189,13 +189,13 @@ class _AccountCreateState extends State<AccountCreate>
                         });
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 13),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 16.w, vertical: 12.h),
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(0, 0, 0, 0.1),
                           border:
                               Border.all(color: Color.fromRGBO(0, 0, 0, 0.03)),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,9 +203,9 @@ class _AccountCreateState extends State<AccountCreate>
                             Row(
                               children: [
                                 Icon(Icons.language,
-                                    color: Colors.cyan.shade700, size: 28),
-                                const SizedBox(width: 12),
-                                const Text(
+                                    color: Colors.cyan.shade700, size: 28.sp),
+                                SizedBox(width: 12.w),
+                                Text(
                                   "Tilni tanlang",
                                   style: TextStyle(
                                       fontSize: 16, color: Colors.black),
@@ -213,11 +213,11 @@ class _AccountCreateState extends State<AccountCreate>
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 16),
+                              padding: EdgeInsets.only(right: 16.w),
                               child: Text(
                                 selectedLanguage.toUpperCase(),
                                 style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 16.sp,
                                     color: Colors.cyan.shade800,
                                     fontWeight: FontWeight.w700),
                               ),
@@ -226,23 +226,23 @@ class _AccountCreateState extends State<AccountCreate>
                         ),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4.h),
 
                     // 🔽 Animatsiya bilan ochiladigan qism
                     ClipRect(
                       child: AnimatedSize(
-                        duration: const Duration(milliseconds: 300),
+                        duration: Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                         child: ConstrainedBox(
                           constraints: isLanguageDropdownOpen
-                              ? const BoxConstraints()
-                              : const BoxConstraints(maxHeight: 0),
+                              ? BoxConstraints()
+                              : BoxConstraints(maxHeight: 0),
                           child: Container(
-                            padding: EdgeInsets.all(1),
+                            padding: EdgeInsets.all(1.w),
                             decoration: BoxDecoration(
                               border: Border.all(
                                   color: Color.fromRGBO(0, 0, 0, 0.1)),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.r),
                             ),
                             child: Column(
                               children: languages.asMap().entries.map((entry) {
@@ -253,26 +253,26 @@ class _AccountCreateState extends State<AccountCreate>
 
                                 return Container(
                                   margin: EdgeInsets.symmetric(
-                                      vertical: 1, horizontal: 2),
+                                      vertical: 1.h, horizontal: 2.w),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.r),
                                     color: backgroundColor,
                                   ),
                                   child: ListTile(
-                                    contentPadding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 20.w),
                                     title: Text(
                                       lang.toUpperCase(),
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         color: Colors.black54,
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 14,
+                                        fontSize: 14.sp,
                                       ),
                                     ),
                                     trailing: selectedLanguage == lang
                                         ? Padding(
                                             padding:
-                                                const EdgeInsets.only(right: 8),
+                                                EdgeInsets.only(right: 8.w),
                                             child: Icon(Icons.check,
                                                 color: Colors.cyan.shade800),
                                           )
@@ -303,14 +303,14 @@ class _AccountCreateState extends State<AccountCreate>
                     onPressed: () =>Get.to(HomePage()),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.cyan.shade800,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'KEYINGI',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(fontSize: 18.sp, color: Colors.white),
                     ),
                   ),
                 ),

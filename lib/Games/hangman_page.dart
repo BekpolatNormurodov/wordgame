@@ -1,13 +1,13 @@
-import '../library.dart';
+import 'package:wordgame/library.dart';
 
-class GamePage extends StatefulWidget {
-  const GamePage({super.key});
+class HangmanPage extends StatefulWidget {
+   HangmanPage({super.key});
 
   @override
-  State<GamePage> createState() => _GamePageState();
+  State<HangmanPage> createState() => _HangmanPageState();
 }
 
-class _GamePageState extends State<GamePage> {
+class _HangmanPageState extends State<HangmanPage> {
   final String characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   final List<String> selectedChar = [];
   int tries = 0;
@@ -49,11 +49,11 @@ class _GamePageState extends State<GamePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (provider == null) return const SizedBox();
+    if (provider == null) return  SizedBox();
 
     switch (provider!.state) {
       case WordState.intial:
-        return const SizedBox();
+        return  SizedBox();
 
       case WordState.waiting:
         return Center(
@@ -65,12 +65,12 @@ class _GamePageState extends State<GamePage> {
         );
 
       case WordState.error:
-        return const Center(
+        return  Center(
           child: Text(
             "Ma'lumotlar mavjud emas!!!",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.none,
             ),
@@ -81,12 +81,10 @@ class _GamePageState extends State<GamePage> {
         return Scaffold(
           backgroundColor: Color.fromRGBO(66, 27, 155, 1),
           appBar: AppBar(
-            toolbarHeight: 80,
+            toolbarHeight: 70.h,
             leading: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: 20,
-              height: 20,
-              decoration: const BoxDecoration(
+              margin:  EdgeInsets.symmetric(horizontal: 10.w),
+              decoration:  BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
@@ -177,7 +175,7 @@ class _GamePageState extends State<GamePage> {
                   padding:
                       EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
                   child: GridView.count(
-                    physics: const NeverScrollableScrollPhysics(),
+                    physics:  NeverScrollableScrollPhysics(),
                     crossAxisCount: 7,
                     mainAxisSpacing: 10.w,
                     crossAxisSpacing: 8.h,
@@ -240,7 +238,7 @@ class _GamePageState extends State<GamePage> {
   void playSuccessSound() async {
     await player.setVolume(0.2);
     await player.play(AssetSource('voice/success.mp3'));
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed( Duration(seconds: 2), () {
       player.stop();
     });
   }
@@ -257,21 +255,21 @@ class _GamePageState extends State<GamePage> {
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text("🎉 Tabriklaymiz!",
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+        title:  Text("🎉 Tabriklaymiz!",
             style: TextStyle(fontWeight: FontWeight.bold)),
         content: SizedBox(
-          height: 80,
+          height: 72.h,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+               Text(
                   "Siz so'zni to'liq topdingiz.\nKeyingi bosqichga o'tasizmi?"),
-              const SizedBox(height: 10),
+               SizedBox(height: 8.h),
               Row(
                 children: [
-                  const Icon(Icons.star, color: Colors.amber),
-                  const SizedBox(width: 4),
+                   Icon(Icons.star, color: Colors.amber),
+                   SizedBox(width: 4.w),
                   Text("Ball: $categoryIndex"),
                 ],
               ),
@@ -281,16 +279,16 @@ class _GamePageState extends State<GamePage> {
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFFA726),
+              backgroundColor:  Color(0xFFFFA726),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.r),
               ),
             ),
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text("Keyingi bosqich"),
+            child:  Text("Keyingi bosqich"),
           ),
         ],
       ),
@@ -305,14 +303,14 @@ class _GamePageState extends State<GamePage> {
       builder: (_) => PopScope(
         child: AlertDialog(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Column(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+          title:  Column(
             children:  [
-              Icon(Icons.sentiment_dissatisfied, size: 48, color: Colors.red),
-              SizedBox(height: 8),
+              Icon(Icons.sentiment_dissatisfied, size: 48.sp, color: Colors.red),
+              SizedBox(height: 8.h),
               Text(
                 "Yutqazdingiz",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
               ),
             ],
           ),
@@ -320,12 +318,12 @@ class _GamePageState extends State<GamePage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text("To'g'ri topilgan javoblar: $categoryIndex"),
-              const SizedBox(height: 8),
-              const Row(
+               SizedBox(height: 8.h),
+               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.star, color: Colors.amber),
-                  SizedBox(width: 4),
+                  SizedBox(width: 4.w),
                   Text("Ball: "),
                 ],
               ),
@@ -340,25 +338,25 @@ class _GamePageState extends State<GamePage> {
                     backgroundColor: Colors.grey,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
                   ),
-                  icon: const Icon(Icons.home),
-                  label: const Text("Uyga"),
+                  icon:  Icon(Icons.home),
+                  label:  Text("Uyga"),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                 ),
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFA726),
+                    backgroundColor:  Color(0xFFFFA726),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
                   ),
-                  icon: const Icon(Icons.replay),
-                  label: const Text("Qaytarish"),
+                  icon:  Icon(Icons.replay),
+                  label:  Text("Qaytarish"),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -419,8 +417,8 @@ Widget hiddenLetter(String char, bool visible, int count) {
 // 🖼️ Rasm ko‘rsatish
 Widget figure(String path, bool visible) {
   return SizedBox(
-    width: 250.0,
-    height: 250.0,
+    width: 250.0.w,
+    height: 250.0.w,
     child: Visibility(
       visible: visible,
       child: Image.asset(path),

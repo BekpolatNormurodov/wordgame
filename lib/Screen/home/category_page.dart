@@ -16,23 +16,23 @@ class _CategoryPageState extends State<CategoryPage> {
     {'icon': "wordfind", 'label': "So'zlarni topish"},
   ];
 
-  List pages = [HangmanStepsPage(), HangmanGamePage(), HangmanGamePage(), HangmanGamePage()];
+  List pages = [StepsPage(), HangmanPage(), HangmanPage(), HangmanPage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        toolbarHeight: 64,
+        toolbarHeight: 60.h,
         title: Text(
           "O'yin turini tanlang",
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 22.sp,
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
             shadows: [
               Shadow(
-                blurRadius: 4.0,
+                blurRadius: 4.0.r,
                 color: Colors.black54,
                 offset: Offset(2, 2),
               ),
@@ -54,9 +54,8 @@ class _CategoryPageState extends State<CategoryPage> {
             itemCount: categories.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 20,
-              childAspectRatio: 1,
+              mainAxisSpacing: 20.h,
+              crossAxisSpacing: 20.w,
             ),
             itemBuilder: (context, index) {
               final category = categories[index];
@@ -125,16 +124,16 @@ class _AnimatedCategoryButtonState extends State<_AnimatedCategoryButton>
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.08),
-                blurRadius: 4,
+                blurRadius: 4.r,
                 offset: Offset(2, 2),
               ),
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.08),
-                blurRadius: 4,
+                blurRadius: 4.r,
                 offset: Offset(-1, -1),
               )
             ],
@@ -151,7 +150,7 @@ class _AnimatedCategoryButtonState extends State<_AnimatedCategoryButton>
               Text(
                 widget.label,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.black87,
                 ),
