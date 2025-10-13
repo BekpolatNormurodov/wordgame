@@ -15,7 +15,7 @@ class _HangmanPageState extends State<HangmanPage> {
   int categoryIndex = 0;
   WordProvider? provider;
   final player = AudioPlayer();
-  VoidCallback? _providerListener; // ✅ endi late emas, nullable
+  VoidCallback? _providerListener;
 
   @override
   void initState() {

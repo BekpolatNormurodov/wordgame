@@ -50,7 +50,7 @@ class _StepsPageState extends State<StepsPage> {
         itemCount: 100,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => Get.to(HangmanPage()),
+            onTap: () => Get.to(MillionerPage()),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
               alignment: Alignment.center,

@@ -1,4 +1,5 @@
 export 'package:flutter/material.dart';
+export 'dart:math';
 
 // pubspec.yaml
 export 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,16 @@ export 'package:wordgame/Screen/Account/account_page.dart';
 export 'package:wordgame/Screen/home/category_page.dart';
 export 'package:wordgame/Screen/Ranking/league_ranking.dart';
 export 'package:wordgame/Screen/steps/steps_page.dart';
+
+
+// Games
 export 'package:wordgame/Games/hangman_page.dart';
+export 'package:wordgame/Games/millioner_page.dart';
+export 'package:wordgame/Games/crassword_page.dart';
+export 'package:wordgame/Games/word_finding_page.dart';
+export 'package:wordgame/Games/word_search_page.dart';
+export 'package:wordgame/Games/sentence_making_page.dart';
+
 
 
 
