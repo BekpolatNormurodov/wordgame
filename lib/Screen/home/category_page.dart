@@ -1,8 +1,7 @@
 import 'package:wordgame/library.dart';
 
 class CategoryPage extends StatefulWidget {
-  int index;
-  CategoryPage(this.index, {super.key});
+  CategoryPage({super.key});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -13,10 +12,8 @@ class _CategoryPageState extends State<CategoryPage> {
     {'icon': "hangman", 'label': "Jallod"},
     {'icon': "millioner", 'label': "Millioner"},
     {'icon': "crossword", 'label': 'Krassvord'},
-    {'icon': "wordfind", 'label': "So'zlarni topish"},
+    {'icon': "hiddenwords", 'label': "Yashirin so'zlar"},
   ];
-
-  List pages = [StepsPage(), HangmanPage(), HangmanPage(), HangmanPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +46,7 @@ class _CategoryPageState extends State<CategoryPage> {
         height: double.infinity,
         alignment: Alignment.center,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 50.h),
+          padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 100.h),
           child: GridView.builder(
             itemCount: categories.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -62,7 +59,7 @@ class _CategoryPageState extends State<CategoryPage> {
               return _AnimatedCategoryButton(
                 icon: category['icon'] as String,
                 label: category['label'] as String,
-                onTap: () => Get.to(pages[widget.index]),
+                onTap: () => Get.to(StepsPage(category: category['icon']!)),
               );
             },
           ),

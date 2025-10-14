@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 4.h),
         child: GestureDetector(
-          onTap: () => Get.to(CategoryPage(index)),
+          onTap: () => Get.to(CategoryPage()),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             height: 48.h,

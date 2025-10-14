@@ -2,14 +2,14 @@ import 'package:wordgame/library.dart';
 import 'dart:math' as math;
 
 
-class WordFindingPage extends StatefulWidget {
-  const WordFindingPage({super.key});
+class WordFindPage extends StatefulWidget {
+  const WordFindPage({super.key});
 
   @override
-  _WordFindingPageState createState() => _WordFindingPageState();
+  _WordFindPageState createState() => _WordFindPageState();
 }
 
-class _WordFindingPageState extends State<WordFindingPage>
+class _WordFindPageState extends State<WordFindPage>
     with SingleTickerProviderStateMixin {
   late final List<List<String>> stages;
   late List<String> words;
@@ -177,8 +177,9 @@ class _WordFindingPageState extends State<WordFindingPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("So‘z Topish O‘yini — Bosqich ${stageIndex + 1}"),
+        title: Text("So‘z Topish O‘yini — Bosqich ${stageIndex + 1}"),  
         actions: [
           Row(
             children: List.generate(

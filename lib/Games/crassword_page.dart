@@ -1,19 +1,5 @@
 import 'package:wordgame/library.dart';
 
-class WordConnectApp extends StatelessWidget {
-  const WordConnectApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'So‘z topish o‘yini',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const WordGamePage(),
-    );
-  }
-}
-
 // --- LEVELLAR ---
 final List<List<String>> levelLetters = [
   ["B", "E", "T", "O"],
@@ -27,14 +13,14 @@ final List<List<String>> levelWords = [
   ["SUPER", "RUS", "PU"],
 ];
 
-class WordGamePage extends StatefulWidget {
-  const WordGamePage({super.key});
+class CrosswordPage extends StatefulWidget {
+  const CrosswordPage({super.key});
 
   @override
-  State<WordGamePage> createState() => _WordGamePageState();
+  State<CrosswordPage> createState() => _CrosswordPageState();
 }
 
-class _WordGamePageState extends State<WordGamePage> {
+class _CrosswordPageState extends State<CrosswordPage> {
   int currentLevel = 0;
   List<String> foundWords = [];
   String currentWord = "";

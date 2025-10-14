@@ -25,9 +25,8 @@ export 'package:wordgame/Screen/steps/steps_page.dart';
 export 'package:wordgame/Games/hangman_page.dart';
 export 'package:wordgame/Games/millioner_page.dart';
 export 'package:wordgame/Games/crassword_page.dart';
-export 'package:wordgame/Games/word_finding_page.dart';
-export 'package:wordgame/Games/word_search_page.dart';
-export 'package:wordgame/Games/sentence_making_page.dart';
+export 'package:wordgame/Games/word_find_page.dart';
+export 'package:wordgame/Games/hidden_word_page.dart';
 
 
 

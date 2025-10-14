@@ -1,7 +1,8 @@
 import 'package:wordgame/library.dart';
 
 class StepsPage extends StatefulWidget {
-  StepsPage({super.key});
+  String category;
+  StepsPage({required this.category, super.key});
 
   @override
   State<StepsPage> createState() => _StepsPageState();
@@ -19,7 +20,15 @@ class _StepsPageState extends State<StepsPage> {
           child: Icon(Icons.arrow_back, color: Colors.white),
         ),
         title: Text(
-          "Jallod",
+          widget.category == "hangman"
+              ? "Jallod"
+              : widget.category == "millioner"
+              ? "Millioner"
+              : widget.category == "crossword"
+              ? "Krassvord"
+              : widget.category == "hiddenwords"
+              ? "Yashirin so'zlar"
+              : "",
           style: TextStyle(
             fontSize: 22.sp,
             fontWeight: FontWeight.w700,
@@ -50,7 +59,17 @@ class _StepsPageState extends State<StepsPage> {
         itemCount: 100,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => Get.to(MillionerPage()),
+            onTap: () => Get.to(
+              widget.category == "hangman"
+                  ? HangmanPage()
+                  : widget.category == "millioner"
+                  ? MillionerPage()
+                  : widget.category == "crossword"
+                  ? CrosswordPage()
+                  : widget.category == "hiddenwords"
+                  ? HiddenWordPage()
+                  : CategoryPage(),
+            ),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
               alignment: Alignment.center,
@@ -112,12 +131,8 @@ class _StepsPageState extends State<StepsPage> {
                           ),
                         )
                       : index == 0
-                          ? Container()
-                          : Icon(
-                              Icons.lock,
-                              color: Colors.black45,
-                              size: 30.sp,
-                            ),
+                      ? Container()
+                      : Icon(Icons.lock, color: Colors.black45, size: 30.sp),
                 ],
               ),
             ),

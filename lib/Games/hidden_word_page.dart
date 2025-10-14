@@ -18,14 +18,14 @@ class WordSearchModel {
   List<String> getWords(int level) => levels[level] ?? [];
 }
 
-/// ---------------- WordSearchPage ----------------
-class WordSearchPage extends StatefulWidget {
-  const WordSearchPage({super.key});
+/// ---------------- HiddenWordPage ----------------
+class HiddenWordPage extends StatefulWidget {
+  const HiddenWordPage({super.key});
   @override
-  State<WordSearchPage> createState() => _WordSearchPageState();
+  State<HiddenWordPage> createState() => _HiddenWordPageState();
 }
 
-class _WordSearchPageState extends State<WordSearchPage> {
+class _HiddenWordPageState extends State<HiddenWordPage> {
   final WordSearchModel model = WordSearchModel();
   final int gridSize = 12;
 
